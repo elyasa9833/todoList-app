@@ -17,7 +17,7 @@ class TodoController extends Controller
 
     public function create()
     {
-        return view('todos.index', $data);
+        return view('todos.create');
     }
 
     public function store(Request $request)
@@ -34,6 +34,12 @@ class TodoController extends Controller
     public function update(Request $request, Todo $todo)
     {
         $todo->update($request->all());
+        return redirect('/');
+    }
+
+    public function delete(Todo $todo)
+    {
+        $todo->delete();
         return redirect('/');
     }
 }
