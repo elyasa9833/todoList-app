@@ -6,14 +6,9 @@
                 <div class="panel panel-default">
                     <div class="panel-heading">TodoList</div>
                     <div class="panel-body">
-                        <form action="{{ url('/todos/'.$todos->id) }}" method="post" role="form">
+                        <form action="{{ url('/todos/'.$todo->id) }}" method="post" role="form">
                             {{ csrf_field() }}
                             {{ method_field('put') }}
-
-                            <div class="form-group">
-                                <label class="control-label">Name</label>
-                                <input type="text" name="name" class="form-control" value="{{ $todo->name }}">
-                            </div>
 
                             <div class="form-group">
                                 <label class="control-label">Name</label>
