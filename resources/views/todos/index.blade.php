@@ -15,7 +15,7 @@
                                 <tr>
                                     <th>Name</th>
                                     <th>Is Done</th>
-                                    <th>Action</th>
+                                    <th class="col-lg-3">Action</th>
                                 </tr>
 
                                 @if (!count($todos))
@@ -28,7 +28,8 @@
                                         <td>{{ $todo->name }}</td>
                                         <td>{{ $todo->is_done ? 'done':'not done' }}</td>
                                         <td>
-                                            <a href="{{ url('/todos/'.$todos->id.'') }}" class="btn btn-warning"></a>
+                                            <a href="{{ url('/todos/'.$todo->id.'/edit') }}" class="btn btn-warning">Edit</a>
+                                            <a href="{{ url('/todos/'.$todo->id.'/edit') }}" class="btn btn-danger">Delete</a>
                                         </td>
                                     </tr>
                                 @endforeach
